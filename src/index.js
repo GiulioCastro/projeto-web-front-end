@@ -1,6 +1,17 @@
 import { render } from 'react-dom';
-import App from './App';
-import './index.css';
 
-const rootElement = document.getElementById("root");
-render(<App />, rootElement);
+// providers
+import { GlobalProvider } from './providers/global';
+import { ThemeProvider } from './providers/theme';
+
+// app
+import App from './App';
+
+render(
+	<GlobalProvider>
+		<ThemeProvider>
+			<App />
+		</ThemeProvider>
+	</GlobalProvider>,
+	document.getElementById("root")
+);

@@ -1,7 +1,10 @@
 import logo from './logo.svg';
 import './App.css';
 
+import { useThemeState } from "providers/theme"
+
 function App() {
+  const { toggleDarkMode } = useThemeState();
   return (
     <div className="App">
       <header className="App-header">
@@ -17,6 +20,9 @@ function App() {
         >
           Learn React
         </a>
+      <button onClick={toggleDarkMode}>
+        DarkMode
+      </button>
       </header>
     </div>
   );
