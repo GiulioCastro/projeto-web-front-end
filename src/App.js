@@ -25,17 +25,15 @@ export default function App() {
 	return (
 		<Router>
 			<Routes>
-				<Route path="/">
-					<Route element={<PrivateRoutes />}>					
-						<Route element={<MainLayout />}>
-							<Route path="/home" element={<Home />} />	
-						</Route>		
-						<Route path="*" element={<Navigate to="/home" />} />	
-					</Route>	
-					<Route element={<PublicRoutes />}>
-						<Route path="/login" element={() => {}} />	
-						<Route path="*" element={<Navigate to="/login" />} />	
-					</Route>
+				<Route element={<PrivateRoutes />}>					
+					<Route element={<MainLayout />}>
+						<Route path="/home" element={<Home />} />	
+					</Route>		
+					<Route path="*" element={<Navigate to="/home" />} />	
+				</Route>	
+				<Route element={<PublicRoutes />}>
+					<Route path="/login" element={<Home />} />	
+					<Route path="*" element={<Navigate to="/login" />} />	
 				</Route>
 			</Routes>
 		</Router>

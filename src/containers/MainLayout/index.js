@@ -1,11 +1,15 @@
 import React from 'react';
 import { Outlet } from "react-router-dom";
 import { makeStyles } from '@mui/styles';
-import TopBar from './components';
+import { TopBar, NavBar } from './components';
+
+import {
+	Container, Grid
+} from '@mui/material';
 
 const useStyles = makeStyles((theme) => ({
 	root: {
-		backgroundColor: '#fff',
+		backgroundColor: theme.palette.background.default,
 		display: 'flex',
 		height: '100%',
 		overflow: 'hidden',
@@ -34,13 +38,22 @@ function MainLayout() {
 	return (
 		<div className={classes.root}>
 			<TopBar />
-			<div className={classes.wrapper}>
+			<Container maxWidth="xl">
+				<Grid container>
+					<Grid item lg={2}>
+						<NavBar />
+					</Grid>
+					<Grid item xs={12} lg={10}>
+						<Outlet />
+					</Grid>
+				</Grid>
+			</Container>
+			{/* <div className={classes.wrapper}>
 				<div className={classes.contentContainer}>
 					<div className={classes.content}>
-						<Outlet />
 					</div>
 				</div>
-			</div>
+			</div> */}
 		</div>
 	);
 };

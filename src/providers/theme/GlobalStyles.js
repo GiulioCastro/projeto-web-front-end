@@ -20,16 +20,17 @@ const useStyles = makeStyles((theme) => createStyles({
 			width: '100%'
 		},
 		"::-webkit-scrollbar": {
-			height: theme.spacing(0.5),
-			width: theme.spacing(0.5)
+			height: theme.spacing(1.5),
+			width: theme.spacing(1.5)
 		},
 		"::-webkit-scrollbar-track": {
-			background: colors.grey[300]
+			background: colors.grey[800]
 		},
 		"::-webkit-scrollbar-thumb": {
-			background: colors.grey[600],
+			borderRadius: '50px',
+			background: colors.grey[700],
 			'&:hover': {
-				background: colors.grey[800]
+				background: colors.grey[600]
 			}
 		},
 		a: {
