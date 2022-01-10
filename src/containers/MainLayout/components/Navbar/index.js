@@ -81,7 +81,7 @@ const user = {
 	name: 'Katarina Smith'
 };
 
-const useStyles = makeStyles(() => ({
+const useStyles = makeStyles((theme) => ({
 	mobileDrawer: {
 		width: 256
 	},
@@ -90,6 +90,11 @@ const useStyles = makeStyles(() => ({
 		top: 64,
 		height: 'calc(100% - 64px)'
 	},
+	desktopCard: {
+		position: 'sticky',
+		top: 64,
+		margin: `${theme.spacing(3)} 0px`
+	}
 }));
 
 function NavBar({ onMobileClose, openMobile }) {
@@ -165,8 +170,8 @@ function NavBar({ onMobileClose, openMobile }) {
 					{content}
 				</Drawer>
 			</Hidden>
-			<Hidden mdDown>
-				<Card>
+			<Hidden lgDown>
+				<Card className={classes.desktopCard}>
 					<CardContent>
 						<List>
 							{items.map((item) => (

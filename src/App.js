@@ -4,11 +4,11 @@ import { BrowserRouter as Router, Routes, Route, Navigate, Outlet } from "react-
 import { useGlobalState } from "providers/global";
 
 // layouts
-import { MainLayout } from "containers";
+import { MainLayout, NoLayout } from "containers";
 
 // pages
 import {
-	Home,
+	Home, Search, Login, Register
 } from "pages";
 
 function PrivateRoutes() {
@@ -28,11 +28,15 @@ export default function App() {
 				<Route element={<PrivateRoutes />}>					
 					<Route element={<MainLayout />}>
 						<Route path="/home" element={<Home />} />	
+						<Route path="/search" element={<Search />} />	
 					</Route>		
 					<Route path="*" element={<Navigate to="/home" />} />	
 				</Route>	
 				<Route element={<PublicRoutes />}>
-					<Route path="/login" element={<Home />} />	
+					<Route element={<NoLayout />}>
+						<Route path="/login" element={<Login />} />		
+						<Route path="/register" element={<Register />} />		
+					</Route>		
 					<Route path="*" element={<Navigate to="/login" />} />	
 				</Route>
 			</Routes>

@@ -11,6 +11,7 @@ import {
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import StarBorderIcon from '@mui/icons-material/StarBorder';
 import AutoStoriesIcon from '@mui/icons-material/AutoStories';
+import LanguageIcon from '@mui/icons-material/Language';
 
 function TextStatus(props) {
   const { title, Icon, value } = props;
@@ -60,6 +61,7 @@ function TextCard(props) {
             <TextStatus Icon={FavoriteBorderIcon} title="Favoritos" value="10" />
             <TextStatus Icon={StarBorderIcon} title="Nota média" value="4.4" />
             <TextStatus Icon={AutoStoriesIcon} title="Categoria" value="Ficção" />
+            <TextStatus Icon={LanguageIcon} title="Língua" value="pt/br" />
           </Stack>
           <Typography variant="body2" color="text.secondary">
             A group of strangers chosen by the goverment to help with the secret project  end up in an futuristic/cyberpunk city in a conflict between an insurgency force and a wealthy corporation.
