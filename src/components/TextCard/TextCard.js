@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-
+import { useNavigate } from 'react-router-dom';
 import {
   Divider,
   Card, CardContent,
@@ -28,16 +28,17 @@ function TextStatus(props) {
 }
 
 TextStatus.propTypes = {
-	Icon: PropTypes.node,
+  Icon: PropTypes.object,
 	title: PropTypes.string,
 	value: PropTypes.string,
 };
 
 function TextCard(props) {
   const { image, title, tags, description, favorites, reviews, creator, ...rest } = props;
+  const navigate = useNavigate();
   return (
     <Card sx={{ mb: 3 }} {...rest}>
-      <CardActionArea sx={{ display: 'flex', justifyContent: 'start', alignItems: 'start', p: 1 }}>
+      <CardActionArea sx={{ display: 'flex', justifyContent: 'start', alignItems: 'start', p: 1 }} onClick={() => navigate('/read')}>
         <CardMedia
           component="img"
           sx={{ width: 'auto' }}
@@ -63,12 +64,20 @@ function TextCard(props) {
             <TextStatus Icon={AutoStoriesIcon} title="Categoria" value="Ficção" />
             <TextStatus Icon={LanguageIcon} title="Língua" value="pt/br" />
           </Stack>
-          <Typography variant="body2" color="text.secondary">
+          <Typography
+            sx={{
+              display: '-webkit-box',
+              overflow: 'hidden',
+              WebkitBoxOrient: 'vertical',
+              WebkitLineClamp: 5,
+            }}
+            variant="body2"
+            color="text.secondary"
+          >
             A group of strangers chosen by the goverment to help with the secret project  end up in an futuristic/cyberpunk city in a conflict between an insurgency force and a wealthy corporation.
 
             This is my first short story so feedback would be nice. Leave a vote if you enjoyed the story. The pictures are not mine.
           </Typography>
-
         </CardContent>
       </CardActionArea>
     </Card>
@@ -83,7 +92,6 @@ TextCard.propTypes = {
   favorites: PropTypes.string, 
   category: PropTypes.string, 
   reviews: PropTypes.string, 
-  creator: PropTypes.string
 };
 
 export default TextCard;

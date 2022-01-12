@@ -1,6 +1,7 @@
 import React from 'react';
 import { Outlet } from "react-router-dom";
 import { makeStyles } from '@mui/styles';
+import { TopBar } from 'containers/components';
 
 const useStyles = makeStyles((theme) => ({
 	root: {
@@ -9,8 +10,10 @@ const useStyles = makeStyles((theme) => ({
 		width: '100%'
 	},
 	wrapper: {
-		display: 'flex',
-		flex: '1 1 auto',
+		[theme.breakpoints.down('lg')]: {
+			display: 'flex',
+		},
+		paddingTop: 64,
 	},
 }));
 
@@ -18,6 +21,7 @@ function NoLayout() {
 	const classes = useStyles();
 	return (
 		<div className={classes.root}>
+			<TopBar />
 			<div className={classes.wrapper}>
 				<Outlet />
 			</div>

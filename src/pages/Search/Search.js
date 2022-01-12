@@ -1,11 +1,8 @@
-import { useEffect } from 'react';
-
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import {
-  Paper,
   Box, Grid,
-  Button, Divider,
+  Button,
   Card, CardContent
 } from '@mui/material';
 
@@ -13,14 +10,8 @@ import { makeStyles } from '@mui/styles';
 
 import Page from 'components/Page';
 import TextCard from 'components/TextCard';
-import SearchBar from 'components/SearchBar';
 import WriterRecommendationList from 'components/WriterRecommendationList';
 import { FormikSelect, FormikTextField, FormikAutocomplete } from 'components/formElements';
-import ActivityItem from '../../components/ActivityItem';
-
-import AutoStoriesIcon from '@mui/icons-material/AutoStories';
-import HistoryEduIcon from '@mui/icons-material/HistoryEdu';
-import StarIcon from '@mui/icons-material/Star';
 
 const validationSchema = Yup.object({
   title: Yup.string(),
@@ -54,8 +45,6 @@ function App() {
       window.alert(JSON.stringify(values))
     }
   });
-
-  useEffect(() => console.log(formik.values), [formik.values])
 
   return (
     <Page className={classes.root} title="Homepage">

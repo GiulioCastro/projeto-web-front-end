@@ -1,13 +1,12 @@
 import React from 'react';
-import { Link as RouterLink, useNavigate } from 'react-router-dom';
+import { Link as RouterLink } from 'react-router-dom';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
 
 import {
-  Grid, Box, Button,
+  Box, Button,
   Container,
   Link, Typography,
-  IconButton
 } from '@mui/material';
 
 import { makeStyles } from '@mui/styles';
@@ -32,10 +31,9 @@ const validationSchema = Yup.object({
   password: Yup.string().max(255).required('Email é obrigatório')
 });
 
-function LoginView() {
+function Login() {
   const classes = useStyles();
   const { signIn } = useAuth();
-  const navigate = useNavigate();
 
   const handleSignIn = (values) => {
     /* console.log(values) */
@@ -126,4 +124,4 @@ function LoginView() {
   );
 };
 
-export default LoginView;
+export default Login;

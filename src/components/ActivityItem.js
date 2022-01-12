@@ -1,11 +1,7 @@
-import {
-  Button, Divider,
-  Card, CardContent,
-  Box, Typography
-} from '@mui/material';
+import { Button, Box, Typography } from '@mui/material';
 
 function ActivityItem(props) {
-  const { Icon, title, subtitle, text, buttonText, onButtonClick } = props;
+  const { Icon, /* title, subtitle, text, buttonText, onButtonClick */ } = props;
   return (
     <Box>
       <Box display="flex" alignItems="center">

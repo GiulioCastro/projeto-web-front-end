@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Outlet } from "react-router-dom";
 import { makeStyles } from '@mui/styles';
-import { TopBar, NavBar } from './components';
+import { TopBar, NavBar } from 'containers/components';
 
 import {
 	Container, Grid
@@ -23,13 +23,17 @@ const useStyles = makeStyles((theme) => ({
 
 function MainLayout() {
 	const classes = useStyles();
+	const [isMobileNavOpen, setMobileNavOpen] = useState(false);
 	return (
 		<div className={classes.root}>
-			<TopBar />
+			<TopBar onMobileNavOpen={() => setMobileNavOpen(true)} />
 			<Container maxWidth="xl" className={classes.wrapper}>
 				<Grid container spacing={3}>
 					<Grid item lg={2} >
-						<NavBar />
+						<NavBar
+							onMobileClose={() => setMobileNavOpen(false)}
+							openMobile={isMobileNavOpen}
+						/>
 					</Grid>
 					<Grid item xs={12} lg={10}>
 						<Outlet />

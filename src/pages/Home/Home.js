@@ -1,16 +1,10 @@
-import { useEffect } from 'react';
-
 import {
-  Container,
-  Box, Grid,
-  Button, Divider,
-  Card, CardContent, Typography
+  Grid,
 } from '@mui/material';
 
 import Page from 'components/Page';
 import TextCard from 'components/TextCard';
 import WriterRecommendationList from 'components/WriterRecommendationList';
-import SearchBar from 'components/SearchBar';
 
 import { makeStyles } from '@mui/styles';
 
@@ -43,7 +37,6 @@ function Home() {
         </Grid>
         <Grid item lg={3}>
           <div className={classes.positionSticky}>
-            <SearchBar />
             <WriterRecommendationList />
           </div>
         </Grid>

@@ -3,21 +3,14 @@ import PropTypes from 'prop-types';
 
 import {
   Avatar,
-  Divider,
   Card, CardContent,
-  CardMedia, CardActionArea,
-  Box, Typography,
-  Stack, Chip,
+  Typography,
   List, ListItem, ListSubheader,
   ListItemAvatar, ListItemText
 } from '@mui/material';
 
-import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
-import StarBorderIcon from '@mui/icons-material/StarBorder';
-import AutoStoriesIcon from '@mui/icons-material/AutoStories';
-
 function WriterListItem(props) {
-  const { name, image } = props;
+  /* const { name, image } = props; */
   return (
     <ListItem alignItems="flex-start">
       <ListItemAvatar>

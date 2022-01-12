@@ -4,21 +4,21 @@ import { BrowserRouter as Router, Routes, Route, Navigate, Outlet } from "react-
 import { useGlobalState } from "providers/global";
 
 // layouts
-import { MainLayout, NoLayout } from "containers";
+import { MainLayout, NoLayout, SimpleLayout } from "containers";
 
 // pages
 import {
-	Home, Search, Login, Register
+	Home, Account, Search, Read, Write, Login, Register
 } from "pages";
 
 function PrivateRoutes() {
   const { isAuthenticated } = useGlobalState();
-	return isAuthenticated ? <Outlet /> : <Navigate to="/login" />;
+  return isAuthenticated ? <Outlet /> : <Navigate to="/login" />;
 }
 
 function PublicRoutes() {
   const { isAuthenticated } = useGlobalState();
-	return isAuthenticated ? <Navigate to="/home" /> : <Outlet />;
+  return isAuthenticated ? <Navigate to="/home" /> : <Outlet />;
 }
 
 export default function App() {
@@ -28,8 +28,13 @@ export default function App() {
 				<Route element={<PrivateRoutes />}>					
 					<Route element={<MainLayout />}>
 						<Route path="/home" element={<Home />} />	
+						<Route path="/account" element={<Account />} />	
 						<Route path="/search" element={<Search />} />	
 					</Route>		
+					<Route element={<SimpleLayout />}>
+						<Route path="/read" element={<Read />} />			
+						<Route path="/write" element={<Write />} />			
+					</Route>	
 					<Route path="*" element={<Navigate to="/home" />} />	
 				</Route>	
 				<Route element={<PublicRoutes />}>
