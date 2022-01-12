@@ -30,10 +30,10 @@ const useStyles = makeStyles((theme) => ({
 
 const validationSchema = Yup.object({
   email: Yup.string().email('Digite um email válido').max(255).required('Email é obrigatório'),
-  firstName: Yup.string().max(255).required('First name is required'),
-  lastName: Yup.string().max(255).required('Last name is required'),
-  password: Yup.string().max(255).required('Email é obrigatório'),
-  confirmPassword: Yup.string().max(255).required('Email é obrigatório'),
+  firstName: Yup.string().max(255).required('Nome é obrigatório'),
+  lastName: Yup.string().max(255).required('Sobrenome é obrigatório'),
+  password: Yup.string().max(255).required('Senha é obrigatória'),
+  confirmPassword: Yup.string().max(255).required('Senha é obrigatória'),
 });
 
 function Register() {

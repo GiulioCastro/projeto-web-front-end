@@ -137,7 +137,7 @@ function Read() {
               </Grid>
             </Grid>
             <Typography color="textPrimary" variant="h2" align="center">
-              The Below - Cyberpunk Adventure
+              Lorem ipsum dolor
             </Typography>
             <Divider variant="middle" sx={{ my: 4 }} />
             <Typography color="textPrimary">

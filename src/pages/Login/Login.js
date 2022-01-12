@@ -12,7 +12,6 @@ import {
 import { makeStyles } from '@mui/styles';
 
 import Page from 'components/Page';
-
 import { FormikTextField } from 'components/formElements';
 
 import { useAuth } from 'hooks';
@@ -28,26 +27,26 @@ const useStyles = makeStyles((theme) => ({
 
 const validationSchema = Yup.object({
   email: Yup.string().email('Digite um email válido').max(255).required('Email é obrigatório'),
-  password: Yup.string().max(255).required('Email é obrigatório')
+  password: Yup.string().required('Senha é obrigatória'),
 });
 
 function Login() {
   const classes = useStyles();
   const { signIn } = useAuth();
 
-  const handleSignIn = (values) => {
-    /* console.log(values) */
-    signIn("token")
-  }
-
   const formik = useFormik({
     initialValues: {
-      email: 'example@example.io',
-      password: 'Password123'
+      email: '',
+      password: ''
     },
     validationSchema,
     onSubmit: handleSignIn
   });
+
+  function handleSignIn(values) {
+    /* console.log(values) */
+    signIn("token")
+  }
 
   return (
     <Page className={classes.root} title="Login">
