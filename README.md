@@ -35,3 +35,4 @@ Este projeto pode ser acessado pelo link: [https://giuliocastro.github.io/projet
 
 - Front-end:
   1. Tela de Recuperar senha 
+  1. Sistema de review de usuários 
