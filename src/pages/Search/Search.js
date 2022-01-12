@@ -53,7 +53,7 @@ function App() {
   return (
     <Page className={classes.root} title="Homepage">
       <Grid container spacing={3}>
-        <Grid item lg={9}>
+        <Grid item xs={12} lg={9}>
           <Card sx={{ mb: 3 }}>
             <CardContent>
               <form onSubmit={formik.handleSubmit}>
@@ -95,7 +95,7 @@ function App() {
           </Card>
           {Array(8).fill(null).map((_, index) => isMobile ? <TextCardSimple key={index} /> : <TextCard key={index} />)}
         </Grid>
-        <Grid item lg={3}>
+        <Grid item xs={12} lg={3}>
           <div className={classes.positionSticky}>
             <WriterRecommendationList />
           </div>
