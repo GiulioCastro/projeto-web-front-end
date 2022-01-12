@@ -3,13 +3,15 @@ import * as Yup from 'yup';
 import {
   Box, Grid,
   Button,
-  Card, CardContent
+  Card, CardContent,
+  useMediaQuery
 } from '@mui/material';
 
-import { makeStyles } from '@mui/styles';
+import { makeStyles, useTheme } from '@mui/styles';
 
 import Page from 'components/Page';
 import TextCard from 'components/TextCard';
+import TextCardSimple from 'components/TextCardSimple';
 import WriterRecommendationList from 'components/WriterRecommendationList';
 import { FormikSelect, FormikTextField, FormikAutocomplete } from 'components/formElements';
 
@@ -34,6 +36,8 @@ const useStyles = makeStyles((theme) => ({
 
 function App() {
   const classes = useStyles();
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
   const formik = useFormik({
     initialValues: {
       title: '',
@@ -89,13 +93,7 @@ function App() {
               </form>
             </CardContent>
           </Card>
-          <TextCard />
-          <TextCard />
-          <TextCard />
-          <TextCard />
-          <TextCard />
-          <TextCard />
-          <TextCard />
+          {Array(8).fill(null).map((_, index) => isMobile ? <TextCardSimple key={index} /> : <TextCard key={index} />)}
         </Grid>
         <Grid item lg={3}>
           <div className={classes.positionSticky}>
