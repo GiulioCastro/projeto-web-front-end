@@ -1,7 +1,8 @@
 import PropTypes from 'prop-types';
+import { useNavigate } from 'react-router-dom';
 
 import {
-  Grid, Box, 
+  Grid, Box,
   Typography, Stack,
   ButtonBase
 } from '@mui/material';
@@ -26,20 +27,21 @@ TextStatus.propTypes = {
 
 function TextCardSimple(props) {
   const { image, title, tags, description, favorites, reviews, creator, ...rest } = props;
+  const navigate = useNavigate();
   return (
-    <ButtonBase sx={{ mb: 3, textAlign: 'left' }} {...rest}>
+    <ButtonBase sx={{ mb: 3, textAlign: 'left' }} {...rest} onClick={() => navigate('/read')}>
       <Grid container spacing={2}>
         <Grid item xs={2} lg={4}>
           <Box
             component="img"
             sx={{ width: '100%' }}
             src="https://howlongtobeat.com/games/Fallout_New_Vegas.jpg"
-            alt="Paella dish"
+            alt="Text banner"
           />
         </Grid>
         <Grid item xs={10} lg={8}>
           <Typography variant="subtitle2" color="text.primary" gutterBottom>
-            The Below - Cyberpunk Adventure
+            Lorem ipsum dolor
           </Typography>
           <Stack
             direction="row"
