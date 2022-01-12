@@ -29,8 +29,8 @@ function TextStatus(props) {
 
 TextStatus.propTypes = {
   Icon: PropTypes.object,
-	title: PropTypes.string,
-	value: PropTypes.string,
+  title: PropTypes.string,
+  value: PropTypes.string,
 };
 
 function TextCard(props) {
@@ -41,13 +41,13 @@ function TextCard(props) {
       <CardActionArea sx={{ display: 'flex', justifyContent: 'start', alignItems: 'start', p: 1 }} onClick={() => navigate('/read')}>
         <CardMedia
           component="img"
-          sx={{ width: 'auto' }}
-          image="https://img.wattpad.com/cover/161683646-144-k994126.jpg"
-          alt="Paella dish"
+          sx={{ width: '144px' }}
+          image="https://howlongtobeat.com/games/Fallout_New_Vegas.jpg"
+          alt="Text banner"
         />
         <CardContent>
           <Typography variant="h3" color="text.primary" gutterBottom>
-            The Below - Cyberpunk Adventure
+            Lorem ipsum dolor
           </Typography>
           <Stack direction="row" spacing={1} sx={{ mb: 1 }}>
             <Chip label="Tag 1" size="small" color="primary" />
@@ -69,14 +69,12 @@ function TextCard(props) {
               display: '-webkit-box',
               overflow: 'hidden',
               WebkitBoxOrient: 'vertical',
-              WebkitLineClamp: 5,
+              WebkitLineClamp: 4,
             }}
             variant="body2"
             color="text.secondary"
           >
-            A group of strangers chosen by the goverment to help with the secret project  end up in an futuristic/cyberpunk city in a conflict between an insurgency force and a wealthy corporation.
-
-            This is my first short story so feedback would be nice. Leave a vote if you enjoyed the story. The pictures are not mine.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ac quam consectetur, feugiat mi mattis, fringilla nisl. Etiam efficitur elementum gravida. Aliquam eget posuere neque. Donec vestibulum nibh eget lacinia pretium. Nullam ut pellentesque mi. Quisque sollicitudin enim in diam sollicitudin luctus. Quisque metus sapien, gravida in metus porta, consectetur ultrices enim. Sed id aliquet nisi, vel euismod quam. Maecenas rhoncus ligula ut luctus feugiat. Suspendisse suscipit lectus id orci lobortis viverra quis sed nibh. Proin sollicitudin dolor et sem sagittis, vitae suscipit erat lobortis. Maecenas ut metus mi. Suspendisse tincidunt purus justo, sit amet egestas orci cursus sit amet.
           </Typography>
         </CardContent>
       </CardActionArea>
@@ -85,13 +83,13 @@ function TextCard(props) {
 }
 
 TextCard.propTypes = {
-	image: PropTypes.string, 
-	title: PropTypes.string,
-  tags: PropTypes.array, 
-  description: PropTypes.string, 
-  favorites: PropTypes.string, 
-  category: PropTypes.string, 
-  reviews: PropTypes.string, 
+  image: PropTypes.string,
+  title: PropTypes.string,
+  tags: PropTypes.array,
+  description: PropTypes.string,
+  favorites: PropTypes.string,
+  category: PropTypes.string,
+  reviews: PropTypes.string,
 };
 
 export default TextCard;

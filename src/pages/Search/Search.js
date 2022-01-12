@@ -103,17 +103,6 @@ function App() {
           </div>
         </Grid>
       </Grid>
-      {/* <Grid container>
-        <Grid item xs>
-          <ActivityItem Icon={AutoStoriesIcon} />
-        </Grid>
-        <Grid item xs>
-          <ActivityItem Icon={HistoryEduIcon} />
-        </Grid>
-        <Grid item xs>
-          <ActivityItem Icon={StarIcon} />
-        </Grid>
-      </Grid> */}
     </Page>
   );
 }

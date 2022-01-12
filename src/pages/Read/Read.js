@@ -8,7 +8,8 @@ import {
   IconButton,
   Divider, Chip,
   Typography,
-  Rating, Checkbox
+  Rating, Checkbox,
+  Tooltip
 } from '@mui/material';
 
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
@@ -60,8 +61,8 @@ function Read() {
       <Box height={375} mb={5} display="flex" justifyContent="center" alignItems="center" bgcolor="secondary.main">
         <img
           height="100%"
-          src="https://d.wattpad.com/story_parts/631045031/images/155445fe0d261d091332888716.jpg"
-          alt="Paella dish"
+          src="https://wallpapercave.com/wp/IEKMIjq.jpg"
+          alt="Text Banner"
         />
       </Box>
       <Container maxWidth="xl">
@@ -72,12 +73,12 @@ function Read() {
             </Typography>
             <Box display="flex" flexDirection="column" alignItems="center" mb={3}>
               <Avatar
-                alt="Remy Sharp"
-                src="https://img.wattpad.com/useravatar/Random_Rice.128.23658.jpg"
+                alt="Sandra Adams"
+                src="https://mui.com/static/images/avatar/3.jpg"
                 sx={{ width: 64, height: 64, mb: 1 }}
               />
               <Typography variant="h6" color="textSecondary">
-                by Random_Rice
+                by Sandra Adams
               </Typography>
             </Box>
             <Divider sx={{ my: 3 }} />
@@ -88,7 +89,7 @@ function Read() {
             <LabelValue label="Nota média" value="4.4" variant="body2" textAlign="center" />
             <LabelValue label="Categoria" value="Ficção" variant="body2" textAlign="center" />
             <LabelValue label="Língua" value="pt/br" variant="body2" textAlign="center" />
-            <LabelValue label="Palavras" value="3587" variant="body2" textAlign="center" />
+            <LabelValue label="Palavras" value="358" variant="body2" textAlign="center" />
             <LabelValue label="Publicado em" value="2021-12-12" variant="body2" textAlign="center" />
             <Divider sx={{ my: 3 }} />
             <Typography variant="h5" color="textSecondary" paragraph textAlign="center">
@@ -117,26 +118,39 @@ function Read() {
           <Grid item lg={6}>
             <Grid container justifyContent="space-between" sx={{ mb: 1 }}>
               <Grid item xs="auto">
-                <IconButton onClick={() => navigate('/home')}>
-                  <ArrowBackIcon color="secondary" />
-                </IconButton>
+                <Tooltip title="Voltar">
+                  <IconButton onClick={() => navigate('/home')}>
+                    <ArrowBackIcon color="textSecondary" />
+                  </IconButton>
+                </Tooltip>
               </Grid>
               <Grid item xs="auto">
-                <Checkbox
-                  inputProps={{ 'aria-label': 'Favorite text' }}
-                  icon={<FavoriteBorderIcon />}
-                  checkedIcon={<FavoriteIcon sx={{ color: pink[500] }} />}
-                  onChange={() => setFavorite(!favorite)}
-                  checked={favorite}
-                />
+                <Tooltip title="Favoritar">
+                  <Checkbox
+                    inputProps={{ 'aria-label': 'Favorite text' }}
+                    icon={<FavoriteBorderIcon />}
+                    checkedIcon={<FavoriteIcon sx={{ color: pink[500] }} />}
+                    onChange={() => setFavorite(!favorite)}
+                    checked={favorite}
+                  />
+                </Tooltip>
               </Grid>
             </Grid>
-            <Typography variant="h2" align="center">
+            <Typography color="textPrimary" variant="h2" align="center">
               The Below - Cyberpunk Adventure
             </Typography>
             <Divider variant="middle" sx={{ my: 4 }} />
-            <Typography>
-              {`-John Baker\nJohn Baker was born on November 6th 1926 in Boston USA. At the age of 19 served as a combat medic in the second world war, after the war he returned to USA and settled in Las Vegas and worked as a detective in his own detective agency.\n\n-Alisson Mullins (Allie)\nAllison Mullins was born on September 9th 1930 in Brighton England. At the age of six Allison and her parents immigrated to Seattle USA. Later she started studying journalism and became a journalist in Las Vegas.\n\nLas Vegas, September 8th 1952,\nJohn Baker's house, 20:00.\n\nAs John was standing on the balcony and listening to the news report on his radio he suddenly heard an unusual sound on the radio, the news report got cut out by a strange deep voice that sounded pre-recorded, the voice said...\n"This is an official goverment announcment, the goverment is developing a secret project that will help the people of our nation and the goverment will be inviting a small amount of people to help with the project. The eligible people will be invited in the upcoming days."\nAfter the announcment the news report continued without a mention of the strange announcment. John didn't take the announcment seriously and went to his bed.\n\n21:30\n\nJohn was woken up by a loud knocking on the front door of his home. He got out of bed and went to the front door, he opened the door and was surprised that nobody was behind the door, as he closed the door he noticed a letter on the floor. He opened the letter...\n\n"To John Baker a true patriot of our country. This is Dr.Williams the head of the "Below Project". You have been invited to help the goverment with this project. For more information visit your local recruitment office."\n\nSeptember 9th, 20:30\n\nAfter recieving the invitation John decided to go to his local recruitment office. John was filled with concern. as he entered the building he saw an officer that asked him...\n1\n\n-Officer: "John Baker is that right?"\n\n-John: "Thats right!"\n\n-Officer: "Follow me please!"\n\nJohn followed the officer to his office.\n\n-Officer: "Please sit down!"\n\n-Officer: "It says here that you're a veteran is that true?"\n\n-John: "Yes sir!"\n\n-Officer: "Where did you serve if you dont mind me asking?"`}
+            <Typography color="textPrimary">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ac quam consectetur, feugiat mi mattis, fringilla nisl. Etiam efficitur elementum gravida. Aliquam eget posuere neque. Donec vestibulum nibh eget lacinia pretium. Nullam ut pellentesque mi. Quisque sollicitudin enim in diam sollicitudin luctus. Quisque metus sapien, gravida in metus porta, consectetur ultrices enim. Sed id aliquet nisi, vel euismod quam. Maecenas rhoncus ligula ut luctus feugiat. Suspendisse suscipit lectus id orci lobortis viverra quis sed nibh. Proin sollicitudin dolor et sem sagittis, vitae suscipit erat lobortis. Maecenas ut metus mi. Suspendisse tincidunt purus justo, sit amet egestas orci cursus sit amet.
+
+              Duis id purus condimentum, mollis mauris non, maximus velit. In eu ipsum justo. Donec scelerisque ex id justo viverra tincidunt. Aenean at ipsum arcu. Suspendisse magna massa, semper ac velit nec, laoreet consectetur ante. Integer ac metus nec nisi sagittis tincidunt. Praesent blandit sapien eu augue congue convallis vitae quis diam. Maecenas pharetra mollis ligula a maximus.
+
+              Aliquam erat volutpat. Cras dolor mi, porta vitae enim quis, ultricies bibendum purus. Curabitur sed faucibus justo, a efficitur purus. Aliquam nec rutrum risus. Aliquam vitae mollis lectus, a euismod risus. Proin augue eros, hendrerit porttitor elementum ut, ullamcorper id sapien. Aenean rhoncus sem non mauris ornare, et aliquam felis volutpat. Nam pellentesque interdum dictum. Pellentesque vulputate accumsan elit, sed condimentum ligula interdum in. Cras euismod orci vitae viverra vulputate. Praesent non sapien lacinia, porttitor dolor sit amet, luctus mauris. Nunc vel lacus odio. Mauris vel sem ac sapien bibendum dignissim vel vitae erat. Donec condimentum ornare varius. Aliquam congue nec arcu ut gravida.
+
+              Donec urna velit, aliquam vehicula lectus id, vulputate vestibulum quam. Mauris quis dolor non sapien tempus pellentesque eu vel lacus. Phasellus eget bibendum diam, eget scelerisque odio. Morbi posuere, libero sed aliquet auctor, libero nulla ullamcorper ante, ut tempor dui enim a sapien. Maecenas vehicula ullamcorper nibh, at sodales magna dictum tempor. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Pellentesque eleifend, risus vitae blandit auctor, dui neque ultrices sapien, at scelerisque ante mi sit amet ipsum.
+
+              Suspendisse potenti. Morbi in euismod tortor. Nulla ultrices nec ex et convallis. Curabitur molestie justo non mi bibendum ultrices. Donec egestas diam et erat tristique, nec finibus nibh tempus. Nullam non molestie justo. Curabitur erat turpis, sagittis ac ligula at, hendrerit elementum velit. Curabitur quis sem eget tortor porttitor fermentum. In egestas iaculis mi, sed vehicula justo tristique vel. Nullam fringilla ante non venenatis faucibus. Donec ullamcorper porta mi vitae tempor. Duis eget magna ligula. Duis laoreet sapien non ante gravida, ac pellentesque ex varius.
+
             </Typography>
           </Grid>
           <Grid item lg={3}>

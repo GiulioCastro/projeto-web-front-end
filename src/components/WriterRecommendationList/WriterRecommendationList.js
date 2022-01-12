@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import {
   Avatar,
-  Card, CardContent,
+  Card, CardContent, CardHeader,
   Typography,
   List, ListItem, ListSubheader,
   ListItemAvatar, ListItemText
@@ -12,23 +12,27 @@ import {
 function WriterListItem(props) {
   /* const { name, image } = props; */
   return (
-    <ListItem alignItems="flex-start">
+    <ListItem alignItems="flex-start" button>
       <ListItemAvatar>
         <Avatar alt="Sandra Adams" src="https://mui.com/static/images/avatar/3.jpg" />
       </ListItemAvatar>
       <ListItemText
-        primary="Oui Oui"
+        primary="Sandra Adams"
         secondary={
           <React.Fragment>
             <Typography
-              sx={{ display: 'inline' }}
               component="span"
               variant="body2"
               color="text.primary"
+              sx={{
+                display: '-webkit-box',
+                overflow: 'hidden',
+                WebkitBoxOrient: 'vertical',
+                WebkitLineClamp: 2,
+              }}
             >
-              Sandra Adams
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque velit.
             </Typography>
-            {' — Do you have Paris recommendations? Have you ever…'}
           </React.Fragment>
         }
       />
@@ -45,10 +49,10 @@ function WriterRecommendationList(props) {
   const { ...rest } = props;
   return (
     <Card {...rest}>
+      <CardHeader title="Escritores recomendados" sx={{ pb: 0 }} />
       <CardContent>
         <List 
           sx={{ width: '100%' }}
-          subheader={<ListSubheader>Escritores recomendados</ListSubheader>}
         >
           <WriterListItem />
           <WriterListItem />

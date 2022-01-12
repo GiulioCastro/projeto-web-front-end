@@ -33,7 +33,7 @@ function TextCardSimple(props) {
           <Box
             component="img"
             sx={{ width: '100%' }}
-            src="https://img.wattpad.com/cover/161683646-144-k994126.jpg"
+            src="https://howlongtobeat.com/games/Fallout_New_Vegas.jpg"
             alt="Paella dish"
           />
         </Grid>
@@ -60,9 +60,7 @@ function TextCardSimple(props) {
             variant="body2"
             color="text.secondary"
           >
-            A group of strangers chosen by the goverment to help with the secret project  end up in an futuristic/cyberpunk city in a conflict between an insurgency force and a wealthy corporation.
-
-            This is my first short story so feedback would be nice. Leave a vote if you enjoyed the story. The pictures are not mine.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ac quam consectetur, feugiat mi mattis, fringilla nisl. Etiam efficitur elementum gravida. Aliquam eget posuere neque. Donec vestibulum nibh eget lacinia pretium. Nullam ut pellentesque mi. Quisque sollicitudin enim in diam sollicitudin luctus. Quisque metus sapien, gravida in metus porta, consectetur ultrices enim. Sed id aliquet nisi, vel euismod quam. Maecenas rhoncus ligula ut luctus feugiat. Suspendisse suscipit lectus id orci lobortis viverra quis sed nibh. Proin sollicitudin dolor et sem sagittis, vitae suscipit erat lobortis. Maecenas ut metus mi. Suspendisse tincidunt purus justo, sit amet egestas orci cursus sit amet.
           </Typography>
         </Grid>
       </Grid>

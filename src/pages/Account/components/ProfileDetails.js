@@ -20,7 +20,7 @@ const validationSchema = Yup.object({
 	firstName: Yup.string().required('Campo obrigatório'),
 	lastName: Yup.string().required('Campo obrigatório'),
 	email: Yup.string().email('Digite um email válido').required('Campo obrigatório'),
-	phone: Yup.string().required('Campo obrigatório'),
+	about: Yup.string().required('Campo obrigatório'),
 });
 
 function ProfileDetails({ className, ...rest }) {
@@ -30,7 +30,7 @@ function ProfileDetails({ className, ...rest }) {
 			firstName: '',
 			lastName: '',
 			email: '',
-			phone: '',
+			about: '',
 		},
 		validationSchema,
 		onSubmit: (values) => {
@@ -54,8 +54,8 @@ function ProfileDetails({ className, ...rest }) {
 						<Grid item md={6} xs={12}>
 							<FormikTextField fullWidth formik={formik} name="email" label="Email" />
 						</Grid>
-						<Grid item md={6} xs={12}>
-							<FormikTextField fullWidth formik={formik} name="phone" label="Telefone" />
+						<Grid item xs={12}>
+							<FormikTextField multiline rows={3} fullWidth formik={formik} name="about" label="Sobre você" />
 						</Grid>
 					</Grid>
 				</CardContent>

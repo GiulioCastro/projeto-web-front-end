@@ -6,7 +6,8 @@ import 'react-quill/dist/quill.snow.css';
 
 import {
   Container, Grid, Avatar,
-  IconButton, Button, ButtonBase
+  IconButton, Button, ButtonBase,
+  Tooltip
 } from '@mui/material';
 
 import CheckIcon from '@mui/icons-material/Check';
@@ -71,9 +72,11 @@ function Write() {
         <form onSubmit={formik.handleSubmit}>
           <Grid container justifyContent="space-between" sx={{ mb: 3 }}>
             <Grid item xs="auto">
-              <IconButton onClick={() => navigate('/home')}>
-                <ArrowBackIcon />
-              </IconButton>
+              <Tooltip title="Voltar">
+                <IconButton onClick={() => navigate('/home')}>
+                  <ArrowBackIcon />
+                </IconButton>
+              </Tooltip>
             </Grid>
             <Grid item xs="auto">
               <Button type="submit" color="primary" variant="contained">
@@ -137,7 +140,7 @@ function Write() {
                 rows={3}
                 formik={formik}
                 name="description"
-                label="Descrição"
+                label="Sumário"
               />
             </Grid>
           </Grid>
@@ -150,7 +153,7 @@ function Write() {
           />
         </form>
       </Container>
-    </Page >
+    </Page>
   );
 }
 
