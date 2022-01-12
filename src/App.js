@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route, Navigate, Outlet } from "react-router-dom";
+import { HashRouter, Routes, Route, Navigate, Outlet } from "react-router-dom";
 
 // providers
 import { useGlobalState } from "providers/global";
@@ -23,7 +23,7 @@ function PublicRoutes() {
 
 export default function App() {
 	return (
-		<Router>
+		<HashRouter basename="/">
 			<Routes>
 				<Route element={<PrivateRoutes />}>					
 					<Route element={<MainLayout />}>
@@ -45,6 +45,6 @@ export default function App() {
 					<Route path="*" element={<Navigate to="/login" />} />	
 				</Route>
 			</Routes>
-		</Router>
+		</HashRouter>
 	);
 };

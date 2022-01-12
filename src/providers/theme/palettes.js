@@ -3,7 +3,7 @@ import { colors } from '@mui/material';
 
 export const light = {
 	primary: {
-		main: colors.blue[500]
+		main: colors.blueGrey[500]
 	},
 	secondary: {
 		main: colors.blueGrey[500]

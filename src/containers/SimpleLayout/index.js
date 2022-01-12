@@ -10,9 +10,6 @@ const useStyles = makeStyles((theme) => ({
 		width: '100%'
 	},
 	wrapper: {
-		[theme.breakpoints.down('lg')]: {
-			display: 'flex',
-		},
 		paddingTop: 64,
 	},
 }));

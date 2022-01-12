@@ -1,12 +1,11 @@
-import {
-  Grid,
-} from '@mui/material';
+import { Grid, useMediaQuery } from '@mui/material';
 
 import Page from 'components/Page';
 import TextCard from 'components/TextCard';
+import TextCardSimple from 'components/TextCardSimple';
 import WriterRecommendationList from 'components/WriterRecommendationList';
 
-import { makeStyles } from '@mui/styles';
+import { makeStyles, useTheme } from '@mui/styles';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -23,19 +22,16 @@ const useStyles = makeStyles((theme) => ({
 
 function Home() {
   const classes = useStyles();
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
+
   return (
     <Page className={classes.root} title="Homepage">
       <Grid container spacing={3}>
-        <Grid item lg={9}>
-          <TextCard />
-          <TextCard />
-          <TextCard />
-          <TextCard />
-          <TextCard />
-          <TextCard />
-          <TextCard />
+        <Grid item xs={12} lg={9}>
+          {Array(8).fill(null).map((_, index) => isMobile ? <TextCardSimple key={index} /> : <TextCard key={index} />)}
         </Grid>
-        <Grid item lg={3}>
+        <Grid item xs={12} lg={3}>
           <div className={classes.positionSticky}>
             <WriterRecommendationList />
           </div>
